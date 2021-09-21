@@ -64,3 +64,13 @@ export type UserType = {
         lat: string,
         lng: string
         }
+    
+    export type ChangeUserType = {
+            key: number,
+            name: string,
+            email: string,
+            phone: string,
+            address: string
+
+
+        }

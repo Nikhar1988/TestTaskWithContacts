@@ -7,7 +7,7 @@ export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
             dispatch({type: UserActionTypes.FETCH_USERS});
-            const response = await UserService.getUsers();
+            const response = await UserService.getAllUsers();
             setTimeout(() => {
                     dispatch({
                         type: UserActionTypes.FETCH_USERS_SUCCESS,

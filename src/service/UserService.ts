@@ -1,37 +1,32 @@
 
-import { UserStateType } from "../types";
+import { ChangeUserType, UserType } from "../types";
 
 export default class UserService {
-        getUsers = async (request: string='https://jsonplaceholder.typicode.com/users' ): Promise<Array<UserStateType>> => {
-                const response = await fetch(request);
-                 
+        static getUsers = async (request: string='https://jsonplaceholder.typicode.com/users' ): Promise<Array<UserType>> => {
+                const response = await fetch(request); 
                 const body = await response.json();
                 return body; // массив с объектами   
               }
 
 
-              getAllPlanets = async () => {
+              static getAllUsers = async (): Promise<ChangeUserType[]> => {
                 const res = await this.getUsers();
                 return res.map(this._changeUsers)
            
               }; 
 
-        _changeUsers =(user: UserStateType)=> {
-                const address = user.address;
-                return { 
-                        key: user.id,
-                        name: user.name,
-                        email: user.email,
-                        phone: user.phone,
-                        address: `City: ${address.city}, Street:${address.street}, Suite:${address.suite}`
-
-
-
-
-                }
+              static _changeUsers =(user: UserType)=> {
+                    const address = user.address;
+                    return { 
+                            key: user.id,
+                            name: user.name,
+                            email: user.email,
+                            phone: user.phone,
+                            address: `City: ${address.city}, Street:${address.street}, Suite:${address.suite}`
+                    }
         }  
 
-        };
+};
     
     
     

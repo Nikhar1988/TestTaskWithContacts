@@ -1,4 +1,4 @@
-import { Table, Tag, Space } from 'antd';
+import { Table } from 'antd';
 import { FC, useEffect } from 'react';
 import { useActions } from '../hooks/useActions'
 import { useSelectorType } from '../hooks/useTypedSelector';
@@ -15,11 +15,11 @@ const TableContacts:FC = () => {
 
     return (
         <Table dataSource={users}>
-            <Table.Column title="№" dataIndex="id" key="id" />
-            <Table.Column title="Name" dataIndex="name" key="id" />
-            <Table.Column title="Email" dataIndex="email" key="id" />
-            <Table.Column title="Phone" dataIndex="phone" key="id" />
-            <Table.Column title="Address" dataIndex="address" key="id" />
+            <Table.Column title="№" dataIndex="key" key="key" />
+            <Table.Column title="Name" dataIndex="name" key="key" />
+            <Table.Column title="Email" dataIndex="email" key="key" />
+            <Table.Column title="Phone" dataIndex="phone" key="key" />
+            <Table.Column title="Address" dataIndex="address" key="key" />
             
     </Table>
     )
